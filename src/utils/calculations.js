@@ -32,7 +32,7 @@ const sellerCharges = {
 
 // rate params are the rates for each of the 3 brackets: change them where the function is called to find correct title insurnace cost
 function findTitleInsuranceCost(salesPrice, first100Rate, second400Rate, restRate) {
-    const first100Insurance = salesPrice < 100000 ? (salesPrice / 1000) * first100Rate : 100 * first100Rate; // check if loan less than 100k
+    const first100Insurance = Math.max(salesPrice < 100000 ? (salesPrice / 1000) * first100Rate : 100 * first100Rate, 200); // check if loan less than 100k
     let second400Insurance = 0;
     let restOfLoanInsurance = 0;
 
@@ -43,15 +43,15 @@ function findTitleInsuranceCost(salesPrice, first100Rate, second400Rate, restRat
         restOfLoanInsurance = Math.ceil((salesPrice - 500000) / 1000) * restRate;
     }
 
-    return first100Insurance + second400Insurance + restOfLoanInsurance;
+    return Math.round((first100Insurance + second400Insurance + restOfLoanInsurance) * 100) / 100;
 }
 
 function findTransferTax(salesPrice) {
-    return salesPrice / 1000;
+    return Math.round((salesPrice / 1000) * 100) / 100;
 }
 
 function findIntangibleTax(loanAmount) {
-    return Math.min((Math.ceil(loanAmount / 500)) * 1.5, 25000);  // takes the lesser of loan/500 * $1.50 and $25k (max amount of transfer tax)
+    return Math.round(Math.min((Math.ceil(loanAmount / 500)) * 1.5, 25000) * 100) / 100;  // takes the lesser of loan/500 * $1.50 and $25k (max amount of transfer tax)
 }
 
 /* 

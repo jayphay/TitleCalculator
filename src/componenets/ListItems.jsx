@@ -6,8 +6,9 @@ import ChargesTableEntries from "./ChargesTableEntries.jsx";
 
 
 export default function ListItems() {
-    const {titleCharges, recordingCharges, grandTotal, transactionType} = useContext(UserContext);
+    const {titleCharges, recordingCharges} = useContext(UserContext);
     const total = useStore(state => state.total);
+    const transactionType = useStore(state => state.transactionType)
 
     return (
         <div>
@@ -15,10 +16,12 @@ export default function ListItems() {
 
             <ChargesTable charges={recordingCharges} />
             <table>
-                <ChargesTableEntries chargeName="Grand Total"
-                    buyerAmt={`$${total}`}
+                <tfoot>
+                    <ChargesTableEntries chargeName="Grand Total"
+                    buyerAmt={`$${new Intl.NumberFormat('en-US', {minimumFractionDigits: 2,maximumFractionDigits: 2}).format(total)}`}
                     sellerAmt={transactionType !== "Refinance" ? "$90" : ""}
-                />
+                    />
+                </tfoot>
             </table>
 
         </div>

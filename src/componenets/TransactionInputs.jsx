@@ -2,29 +2,40 @@ import { UserContext } from "../context/UserContext"
 import { useContext } from "react"
 import CashInput from "./CashInput";
 import LoanInput from "./LoanInput";
+import MoneyInput from "./MoneyInput";
+import { useStore } from "../store/store";
+
 
 export default function TransactionInputs() {
-    const {transactionType, salesPrice, setSalesPrice, loanAmount, setLoanAmount} = useContext(UserContext);
+    // const { salesPrice, setSalesPrice, loanAmount, setLoanAmount} = useContext(UserContext);
+    const salesPrice = useStore(state => state.salesPrice);
+    const loanAmount = useStore(state => state.loanAmount);
+    const setSalesPrice = useStore(state => state.setSaleAmount);
+    const setLoanAmount = useStore(state => state.setLoanAmt);
+
+
+    const transactionType = useStore(state => state.transactionType);
+    
 
     if(transactionType == "Purchase with Financing" ) {
         return (
             <div>
-                <CashInput salesPrice={salesPrice} setSalesPrice={setSalesPrice} />
-                <LoanInput loanAmount={loanAmount} setLoanAmount={setLoanAmount} />
+                <MoneyInput name={"Sales Price"} price={salesPrice} setPrice={setSalesPrice} />
+                <MoneyInput name={"Loan Amount"} price={loanAmount} setPrice={setLoanAmount} />
             </div>
         )
     } 
     else if (transactionType == "Cash Purchase") {
         return (
             <div>
-                <CashInput salesPrice={salesPrice} setSalesPrice={setSalesPrice} />
+                <MoneyInput name={"Sales Price"} price={salesPrice} setPrice={setSalesPrice} />
             </div>
         )
     }
     else {
         return (
             <div>
-                <LoanInput loanAmount={loanAmount} setLoanAmount={setLoanAmount} />
+                <MoneyInput name={"Loan Amount"} price={loanAmount} setPrice={setLoanAmount} />
             </div>
         )
     }

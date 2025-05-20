@@ -4,7 +4,9 @@ import { useStore } from "../store/store.js";
 import ChargesTableEntries from "./ChargesTableEntries.jsx";
 
 export default function ChargesTable({charges}) {
-    const {sellerCharges, transactionType} = useContext(UserContext);
+    const {sellerCharges} = useContext(UserContext);
+    const transactionType = useStore(state => state.transactionType);
+    // console.log(transactionType);
 
     let total = Object.entries(charges)
     .reduce((sum, [charge, amount]) => {
@@ -24,20 +26,26 @@ export default function ChargesTable({charges}) {
     return (
         <div>
             <table>
-                <ChargesTableEntries chargeName={charges.name} 
-                buyerAmt={transactionType != "Refinance" ? "Buyer Pays" : "Borrower Pays"} 
-                sellerAmt={"Seller Pays"} />
-
-                {Object.entries(charges).slice(1).map(([chargeName, amount]) => (
-                    amount != null && <ChargesTableEntries chargeName={chargeName} 
-                    buyerAmt={amount} 
-                    sellerAmt={sellerCharges[chargeName]}/> 
-                ))}
-
-                <ChargesTableEntries chargeName={`Subtotal for ${charges.name}`}
-                buyerAmt={`$${total}`}
-                sellerAmt={charges.name === "Title Charges" ? "$90" : "$0"} />
-
+                <thead>
+                    <ChargesTableEntries chargeName={charges.name} 
+                    buyerAmt={transactionType != "Refinance" ? "Buyer Pays" : "Borrower Pays"} 
+                    sellerAmt={"Seller Pays"} />
+                </thead>
+                
+                <tbody>
+                    {Object.entries(charges).slice(1).map(([chargeName, amount], index) => (
+                        amount != null && <ChargesTableEntries key={index} chargeName={chargeName} 
+                        buyerAmt={amount} 
+                        sellerAmt={sellerCharges[chargeName]}/> 
+                    ))}
+                </tbody>
+                
+                <tfoot>
+                    <ChargesTableEntries chargeName={`Subtotal for ${charges.name}`}
+                    buyerAmt={`$${new Intl.NumberFormat('en-US', {minimumFractionDigits: 2,maximumFractionDigits: 2}).format(total)}`}
+                    sellerAmt={charges.name === "Title Charges" ? "$90" : "$0"} />
+                </tfoot>
+                
             </table>
         </div>
     )
