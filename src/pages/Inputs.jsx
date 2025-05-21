@@ -1,7 +1,7 @@
-import Dropdown from '../componenets/Dropdown';
-import TransactionInputs from '../componenets/TransactionInputs';
-import CalculateButton from '../componenets/CalculateButton';
-import Name from '../componenets/Name';
+import Dropdown from '../components/Dropdown';
+import TransactionInputs from '../components/TransactionInputs';
+import CalculateButton from '../components/CalculateButton';
+import Name from '../components/Name';
 import { UserProvider } from '../context/UserContext';
 
 export default function Inputs() {

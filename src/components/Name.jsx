@@ -8,7 +8,7 @@ export default function Name() {
         <div>
             <input 
                 type="text"
-                placeholder="Enter name of quote"
+                placeholder="Enter address or name of quote"
                 value={name}
                 onChange={e => setName(e.target.value)}
             />
