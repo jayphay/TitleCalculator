@@ -4,7 +4,7 @@
     Some values may remain null and only non-null values will be printed
 */
 let titleCharges = {
-    "name" : "Title Charges",
+    "name" : "Settlement Fees",
     "Attorney's Fee" :  null,
     "Lender's Title Insurance" : null, 
     "Owner's Title Insurance" : null, 
@@ -17,7 +17,7 @@ let titleCharges = {
 };
 
 let recordingCharges = {
-    "name" : "Recording and Transfer",
+    "name" : "Government Fees",
     "Deed Recording Fee" : null,
     "Mortgage Recording Fee" : null,
     "Transfer Tax" : null, 
@@ -37,7 +37,7 @@ function findTitleInsuranceCost(salesPrice, first100Rate, second400Rate, restRat
     let restOfLoanInsurance = 0;
 
     if (salesPrice > 100000) {
-        second400Insurance = salesPrice < 500000 ? ((salesPrice-100000) / 1000) * second400Rate : 400 * second400Rate; // check if loan b/t 100k and 500k
+        second400Insurance = salesPrice < 500000 ? Math.ceil((salesPrice-100000) / 1000) * second400Rate : 400 * second400Rate; // check if loan b/t 100k and 500k
     }
     if (salesPrice > 500000) {
         restOfLoanInsurance = Math.ceil((salesPrice - 500000) / 1000) * restRate;
@@ -47,7 +47,7 @@ function findTitleInsuranceCost(salesPrice, first100Rate, second400Rate, restRat
 }
 
 function findTransferTax(salesPrice) {
-    return Math.round((salesPrice / 1000) * 100) / 100;
+    return Math.ceil((salesPrice / 1000) * 10) / 10;
 }
 
 function findIntangibleTax(loanAmount) {
@@ -62,7 +62,7 @@ function findIntangibleTax(loanAmount) {
 
 function lenderPurchase(salesPrice, loanAmount) {
     titleCharges = {
-        "name" : "Title Charges",
+        "name" : "Settlement Fees",
         "Attorney's Fee" :  650,
         "Lender's Title Insurance" : 200,
         "Owner's Title Insurance" : findTitleInsuranceCost(salesPrice, 6.6, 5.55, 4.5), 
@@ -75,7 +75,7 @@ function lenderPurchase(salesPrice, loanAmount) {
     };
 
     recordingCharges = {
-        "name" : "Recording and Transfer",
+        "name" : "Government Fees",
         "Deed Recording Fee" : 25,
         "Mortgage Recording Fee" : 25,
         "Transfer Tax" : findTransferTax(salesPrice), 
@@ -85,46 +85,46 @@ function lenderPurchase(salesPrice, loanAmount) {
 
 function cashPurcahse(salesPrice) {
     titleCharges = {
-        "name" : "Title Charges",
+        "name" : "Settlement Fees",
         "Attorney's Fee" :  475,
-        "Lender's Title Insurance" : null,
+        // "Lender's Title Insurance" : null,
         "Owner's Title Insurance" : findTitleInsuranceCost(salesPrice, 6.6, 5.55, 4.5), 
         "Examination Fee" : 200,
         "Commitment Fee" : 200,
-        "Closing Protection Letter" : null,
+        // "Closing Protection Letter" : null,
         "Post-Closing Fee" : 45,
         "Payoff Special Handling Fee" : 0, 
-        "E-Recording Fee (Per Document)" : 9.5
+        "E-Recording Fee (Per Document)" : 9.5,
     };
 
     recordingCharges = {
-        "name" : "Recording and Transfer",
+        "name" : "Government Fees",
         "Deed Recording Fee" : 25,
-        "Mortgage Recording Fee" : null,
+        // "Mortgage Recording Fee" : null,
         "Transfer Tax" : findTransferTax(salesPrice), 
-        "Intangible Tax" : null 
+        // "Intangible Tax" : null 
     }
 }
 
 function refinance(loanAmount) {
     titleCharges = {
-        "name" : "Title Charges",
+        "name" : "Settlement Fees",
         "Attorney's Fee" :  450,
         "Lender's Title Insurance" : findTitleInsuranceCost(loanAmount, 4, 3.3, 2.95),
-        "Owner's Title Insurance" : null, 
+        // "Owner's Title Insurance" : null, 
         "Examination Fee" : 200,
         "Commitment Fee" : 125,
         "Closing Protection Letter" : 50,
         "Post-Closing Fee" : 45,
-        "Payoff Special Handling Fee" : null, 
-        "E-Recording Fee (Per Document)" : 4.75
+        // "Payoff Special Handling Fee" : null, 
+        "E-Recording Fee (Per Document)" : 4.75,
     };
 
     recordingCharges = {
-        "name" : "Recording and Transfer",
-        "Deed Recording Fee" : null,
+        "name" : "Government Fees",
+        // "Deed Recording Fee" : null,
         "Mortgage Recording Fee" : 25,
-        "Transfer Tax" : null, 
+        // "Transfer Tax" : null, 
         "Intangible Tax" : findIntangibleTax(loanAmount) 
     }
 

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import ListItems from '../components/ListItems.js';
-import QuoteInfo from '../components/QuoteInfo.js';
+import ListItems from '../components/ListItems';
+import QuoteInfo from '../components/QuoteInfo';
 import { UserContext, UserProvider } from '../context/UserContext';
 import { useStore } from "../store/store.js";
 import html2canvas from 'html2canvas';
@@ -65,7 +65,6 @@ export default function LineItems() {
                 <button onClick={handleClick}>Edit</button>
                 {/* <button onClick={handleDownloadPdf}>Download PDF</button> */}
                 <div>
-                {console.log("sale price", salePrice)}
                     <PDFDownloadLink document={<QuotePdf name={name} transactionType={transactionType} salePrice={salePrice} loanAmount={loanAmount}
                         recordingCharges={recordingCharges} titleCharges={titleCharges} sellerCharges={sellerCharges} total={total}
                     />} fileName="title-quote.pdf">

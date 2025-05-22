@@ -4,9 +4,11 @@ import {styles} from "./styles"
 
 export default function Refi() {
     return (
-        <View>
-            <Text>Are you refinancing a loan?</Text>
-            <Text>Ask your lender to send a title order to <Link src='mailto:info@shermanphalenlaw.com'>info@shermanphalenlaw.com</Link></Text>
+        <View style={styles.questions}>
+            <Text>
+                <Text style={[styles.regText, styles.bold]}>Are you refinancing a loan? </Text>
+                <Text style={styles.regText}>Ask your lender to send a title order to <Link src='mailto:info@shermanphalenlaw.com'>info@shermanphalenlaw.com</Link></Text>
+            </Text>
         </View>
     )
 }

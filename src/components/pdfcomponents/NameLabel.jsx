@@ -3,8 +3,8 @@ import {styles} from "./styles"
 
 export default function NameLabel({name}) {
     return (
-        <View>
-            <Text>Title Quote Estimate for {name}</Text>
+        <View style={styles.subSection}>
+            <Text style={[styles.subHeadText, styles.bold]}>Title Quote Estimate for {name}</Text>
         </View>
     )
 }

@@ -13,8 +13,8 @@ export default function DateLabel() {
     ];
     
     return (
-        <View>
-            <Text>Date: {`${months[monthInd]} ${day}, ${year}`}</Text>
+        <View style={styles.subSection}>
+            <Text style={[styles.subHeadText, styles.bold]}>Date: {`${months[monthInd]} ${day}, ${year}`}</Text>
         </View>
     )
 }

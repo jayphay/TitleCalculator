@@ -8,10 +8,10 @@ export default function Header() {
     return (
         <View style={styles.header}>
             <Image src={logoBase64} style={styles.logo}/>
-            <View>
-                <Text>Sherman & Phalen, LLC</Text>
-                <Text>Real estate closings</Text>
-                <Text>built around you</Text>
+            <View style={styles.logoName}>
+                <Text style={[styles.logoLetters, styles.bold]}>Sherman & Phalen, LLC</Text>
+                <Text style={styles.logoLetters}>Real estate closings</Text>
+                <Text style={styles.logoLetters}>built around you.</Text>
             </View>
         </View>
     )

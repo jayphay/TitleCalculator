@@ -23,18 +23,20 @@ export default function ChargeTable({charges, transactionType, sellerCharges}) {
                 />
 
             {Object.entries(charges).slice(1).map(([chargeName, amount], index) => (
-                amount != null && <TableEntries key={index} chargeName={chargeName} 
+                amount != null && <TableEntries id={index} chargeName={chargeName} 
                 buyerAmt={amount} 
                 sellerAmt={sellerCharges[chargeName]}
                 transactionType={transactionType}
+                doTab={true}
                 /> 
             ))}
 
             <TableEntries 
-                chargeName={`Subtotal for ${charges.name}`}
+                chargeName={`Subtotal`}
                 buyerAmt={`$${new Intl.NumberFormat('en-US', {minimumFractionDigits: 2,maximumFractionDigits: 2}).format(total)}`}
-                sellerAmt={charges.name === "Title Charges" ? "$90" : "$0"} 
+                sellerAmt={charges.name === "Settlement Fees" ? "$90" : "$0"} 
                 transactionType={transactionType}
+                doTab={true}
                 />
         </View>
     )

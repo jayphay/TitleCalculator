@@ -17,19 +17,23 @@ import Disclaimer from './Disclaimer';
 export default function QuotePdf({name, transactionType, salePrice, loanAmount, titleCharges, recordingCharges, sellerCharges, total}) {
 
     const QuotePdf = () => (
-    <Document>
+    <Document style={styles.document}>
         <Page size="A4" style={styles.page}>
-            <View>
+            <View style={styles.allContainer}>
                 <Header />
-                <NameLabel name={name}/>
-                <Prices transactionType={transactionType} salePrice={salePrice} loanAmount={loanAmount}/>
-                <DateLabel />
+                <View style={styles.subHeader}>
+                    {/* <View style={styles.shadow}/> */}
+                    <NameLabel name={name} />
+                    <Prices transactionType={transactionType} salePrice={salePrice} loanAmount={loanAmount}/>
+                    <DateLabel />
+                </View>
+                
                 <View>
-                    <Table>
+                    <Table style={styles.tableStyles}>
                         <ChargeTable charges={titleCharges} transactionType={transactionType} sellerCharges={sellerCharges}/>
                         <ChargeTable charges={recordingCharges} transactionType={transactionType} sellerCharges={sellerCharges}/>
                         <TableEntries 
-                            chargeName="Grand Total"
+                            chargeName="Total"
                             buyerAmt={`$${new Intl.NumberFormat('en-US', {minimumFractionDigits: 2,maximumFractionDigits: 2}).format(total)}`}
                             sellerAmt={transactionType !== "Refinance" ? "$90" : ""}
                             transactionType={transactionType}
@@ -37,10 +41,13 @@ export default function QuotePdf({name, transactionType, salePrice, loanAmount, 
                     </Table>
                 </View>
 
-                <View>
+                <View style={styles.footer}>
                     <Questions />
                     <Refi />
                     <NewHome />
+                    
+                </View>
+                <View style={styles.extraSpace}>
                     <Note />
                     <Disclaimer />
                 </View>
@@ -51,6 +58,6 @@ export default function QuotePdf({name, transactionType, salePrice, loanAmount, 
     );
 
     return (
-            <QuotePdf />
+        <QuotePdf />
     )
 }

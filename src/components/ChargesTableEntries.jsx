@@ -8,7 +8,7 @@ export default function ChargesTableEntries({chargeName, buyerAmt, sellerAmt}) {
     return (
         <tr>
             <td>{chargeName}</td>
-            <td>{buyerAmt == null ?  "" : typeof buyerAmt == "number" ? 
+            <td>{buyerAmt == null || chargeName == "Payoff Special Handling Fee" ? "" : typeof buyerAmt == "number"  ? 
             `$${new Intl.NumberFormat('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}).format(buyerAmt)}` 
             : buyerAmt}</td>
             {transactionType != "Refinance" ? <td>{sellerAmt == null ?  "" : typeof sellerAmt == "number" ?
