@@ -8,25 +8,23 @@ Font.register({
   fonts: [
     { src: Raleway, fontStyle: "normal", fontWeight: "normal" },
     { src: RalewayBold, fontStyle: "normal", fontWeight: "bold" },
-    { src: RalewayItalicBold, fontStyle: "italic", fontWeight: "bold" }
-  ]
-  
-})
+    { src: RalewayItalicBold, fontStyle: "italic", fontWeight: "bold" },
+  ],
+});
 
-
-export const styles = StyleSheet.create({
+export let styles = StyleSheet.create({
   document: {
     fontFamily: "Raleway",
     margin: "50px",
   },
   page: {
-    flexDirection: 'row',
-    backgroundColor: 'white'
+    flexDirection: "row",
+    backgroundColor: "white",
   },
   section: {
     margin: 10,
     padding: 10,
-    flexGrow: 1
+    flexGrow: 1,
   },
   allContainer: {
     display: "flex",
@@ -64,28 +62,27 @@ export const styles = StyleSheet.create({
   bold: {
     fontFamily: "Raleway",
     fontWeight: "bold",
-    borderColor: 'rgba(0,0,0,0)',
+    borderColor: "rgba(0,0,0,0)",
     borderTop: 0,
     borderBottom: 0,
     borderLeft: 0,
     borderRight: 0,
   },
   subHeader: {
-    flexDirection: "column",        
-    alignItems: "flex-start",                          
-    height: 100,                    
+    flexDirection: "column",
+    alignItems: "flex-start",
+    height: 100,
     backgroundColor: "#ececec",
     borderRadius: 10,
-    marginBottom: 10
+    marginBottom: 10,
   },
   subHeadText: {
     fontSize: 12,
     padding: 5,
-
   },
   regText: {
     fontSize: 11,
-    borderColor: 'rgba(0,0,0,0)',
+    borderColor: "rgba(0,0,0,0)",
     borderTop: 0,
     borderBottom: 0,
     borderLeft: 0,
@@ -104,16 +101,16 @@ export const styles = StyleSheet.create({
   //   zIndex: 0,
   // },
   blueBG: {
-    backgroundColor: "#cae0ea"
+    backgroundColor: "#cae0ea",
   },
   greenBG: {
-    backgroundColor: "#a8ccc4"
+    backgroundColor: "#a8ccc4",
   },
   greyBG: {
-    backgroundColor: "#cccccc"
+    backgroundColor: "#cccccc",
   },
   tableStyles: {
-    borderColor: 'rgba(0,0,0,0)',
+    borderColor: "rgba(0,0,0,0)",
     borderTop: 0,
     borderBottom: 0,
     borderLeft: 0,
@@ -128,57 +125,53 @@ export const styles = StyleSheet.create({
     paddingBottom: 2,
     paddingLeft: 5,
     paddingRight: 0,
-    borderColor: 'rgba(0,0,0,0)',
+    borderColor: "rgba(0,0,0,0)",
   },
   indentedCell: {
     paddingLeft: 10,
-    borderColor: 'rgba(0,0,0,0)',
+    borderColor: "rgba(0,0,0,0)",
 
     // border: 0
   },
   nonIndentedCell: {
     paddingRight: 8,
     paddingLeft: 2,
-    borderColor: 'rgba(0,0,0,0)',
-
+    borderColor: "rgba(0,0,0,0)",
   },
   topLeft: {
     paddingRight: 8,
     paddingLeft: 2,
     borderTopWidth: 0,
     borderLeftWidth: 0,
-    borderColor: 'rgba(0,0,0,0)',
+    borderColor: "rgba(0,0,0,0)",
     borderTopLeftRadius: 10,
     backgroundColor: "#a8ccc4",
-    
   },
   topRight: {
-    borderColor: 'rgba(0,0,0,0)',
+    borderColor: "rgba(0,0,0,0)",
     borderRightWidth: 0,
     borderTopWidth: 0,
     borderTopRightRadius: 10,
     backgroundColor: "#a8ccc4",
-
   },
   bottomLeft: {
     paddingRight: 8,
     paddingLeft: 2,
-    borderColor: 'rgba(0,0,0,0)',
+    borderColor: "rgba(0,0,0,0)",
     borderBottomWidth: 0,
     borderLeftWidth: 0,
     borderBottomLeftRadius: 10,
     backgroundColor: "#a8ccc4",
-
   },
   bottomRight: {
-    borderColor: 'rgba(0,0,0,0)',
+    borderColor: "rgba(0,0,0,0)",
     borderBottomWidth: 0,
     borderRightWidth: 0,
     borderBottomRightRadius: 10,
     backgroundColor: "#a8ccc4",
   },
   questions: {
-    display: 'flex',
+    display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
     padding: 5,
@@ -192,24 +185,23 @@ export const styles = StyleSheet.create({
     fontStyle: "italic",
   },
   footer: {
-    flexDirection: "column",        
-    alignItems: "flex-start",                          
-    height: "200px",                    
+    flexDirection: "column",
+    alignItems: "flex-start",
+    height: "200px",
     // backgroundColor: "#ececec",
     // borderRadius: 10,
-    marginTop: 10
+    marginTop: 10,
   },
 
   extraSpace: {
-    // flexDirection: "column",  
-    // flexWrap: "wrap",      
+    // flexDirection: "column",
+    // flexWrap: "wrap",
     // alignItems: "flex-end",
     // height: "100%",
-    position:"absolute",
+    position: "absolute",
     bottom: 30,
     // width: "100%",
     left: 50,
     right: 50,
-  }
-
+  },
 });
