@@ -16,14 +16,14 @@ export default function Dropdown() {
   const setTransactionType = useStore((state) => state.setTransactionType);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col group relative w-full">
       <label
         htmlFor="Transaction"
         className="text-sm font-semibold select-none"
       >
         Choose a Transaction Type
       </label>
-      <div className="w-full max-w-md shadow-sm p-1">
+      <div className="w-full group relative shadow-sm p-1">
         <Listbox value={transactionType} onChange={setTransactionType}>
           <div className="relative w-full">
             <ListboxButton className="relative block w-full text-left focus:outline-none cursor-pointer">
