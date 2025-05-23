@@ -204,4 +204,28 @@ export let styles = StyleSheet.create({
     left: 50,
     right: 50,
   },
+  indentLeft: {
+    paddingLeft: 10,
+    borderColor: "rgba(0,0,0,0)",
+    borderTop: 0,
+    borderBottom: 0,
+    borderLeft: 0,
+    borderRight: 0,
+  },
+  indentMoreLeft: {
+    paddingLeft: 14, // 20 to stack perfectly
+    borderColor: "rgba(0,0,0,0)",
+    borderTop: 0,
+    borderBottom: 0,
+    borderLeft: 0,
+    borderRight: 0,
+  },
+  indentLeftViaRight: {
+    paddingLeft: 11,
+    borderColor: "rgba(0,0,0,0)",
+    borderTop: 0,
+    borderBottom: 0,
+    borderLeft: 0,
+    borderRight: 0,
+  },
 });

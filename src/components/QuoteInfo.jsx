@@ -13,7 +13,7 @@ export default function QuoteInfo() {
         {transactionType == "Purchase with Financing" ||
         transactionType == "Cash Purchase" ? (
           <h3>
-            Sales Price: $
+            Sale Price: $
             {new Intl.NumberFormat("en-US", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,

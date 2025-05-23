@@ -13,6 +13,8 @@ import {
 } from "../utils/calculations.js";
 import Note from "../components/Note.jsx";
 import Disclaimer from "../components/Disclaimer.jsx";
+import ResetButton from "../components/ResetButton.jsx";
+import ThankYou from "../components/ThankYou.jsx";
 
 export default function LineItems() {
   const navigate = useNavigate();
@@ -69,8 +71,10 @@ export default function LineItems() {
                     </button>
                   )}
                 </PDFDownloadLink>
+                {/* new quote button */}
+                <ResetButton />
               </div>
-
+              <ThankYou />
               <Note />
 
               <Disclaimer />
