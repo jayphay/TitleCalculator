@@ -1,16 +1,14 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Inputs from './pages/Inputs';
-import LineItems from './pages/LineItems';
+import { HashRouter, Routes, Route } from "react-router-dom";
+import Inputs from "./pages/Inputs";
+import LineItems from "./pages/LineItems";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-        <Route path="/" element={<Inputs />}/>
+        <Route path="/" element={<Inputs />} />
         <Route path="/quote" element={<LineItems />} />
       </Routes>
-    </BrowserRouter>
-    
-  )
+    </HashRouter>
+  );
 }
-

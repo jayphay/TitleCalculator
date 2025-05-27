@@ -1,7 +1,6 @@
 import { UserContext } from "../context/UserContext";
 import { useContext } from "react";
-import CashInput from "./CashInput";
-import LoanInput from "./LoanInput";
+
 import MoneyInput from "./MoneyInput";
 import { useStore } from "../store/store";
 

@@ -60,7 +60,7 @@ export default function LineItems() {
                       total={total}
                     />
                   }
-                  fileName={`title-quote-for-${name}`}
+                  fileName={`title-quote${name != "" ? `-for-${name}` : ""}`}
                 >
                   {({ blob, url, loading, error }) => (
                     <button
