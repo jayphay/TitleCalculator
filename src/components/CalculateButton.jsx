@@ -48,7 +48,9 @@ export default function CalculateButton() {
       <button
         onClick={handleClick}
         disabled={!checkFilled()}
-        className="rounded-xl bg-sp-lb-600 cursor-pointer disabled:cursor-not-allowed shadow-md p-3 font-semibold disabled:opacity-50 hover:bg-sp-lb-900 active:translate-y-1"
+        className={`rounded-xl bg-sp-lb-600 cursor-pointer disabled:cursor-not-allowed shadow-md p-3 font-semibold disabled:opacity-50 ${
+          checkFilled() ? "hover:bg-sp-lb-900" : ""
+        } active:translate-y-1`}
       >
         Calculate
       </button>
