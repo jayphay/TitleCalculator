@@ -9,6 +9,7 @@ import {
   Transition,
 } from "@headlessui/react";
 import { ChevronDownIcon, CheckIcon } from "@heroicons/react/20/solid";
+import Option from "./Option";
 
 export default function Dropdown() {
   const { setTransaction } = useContext(UserContext);
@@ -36,33 +37,9 @@ export default function Dropdown() {
               className="w-(--button-width) rounded-md border-none outline-none origin-top transition duration-200 ease-out data-closed:scale-95 data-closed:opacity-0 bg-white/30 backdrop-blur-md"
               transition
             >
-              <ListboxOption
-                value="Purchase with Financing"
-                className="cursor-pointer data-focus:bg-neutral-300 group flex gap-2 rounded-md mx-1 my-1 px-1"
-              >
-                <div className="flex flex-row justify-between w-full items-center ">
-                  <span>Purchase with Financing</span>
-                  <CheckIcon className="invisible size-5 fill-logo-blue-500 group-data-selected:visible " />
-                </div>
-              </ListboxOption>
-              <ListboxOption
-                value="Cash Purchase"
-                className=" cursor-pointer data-focus:bg-neutral-300  group flex gap-2 rounded-md mx-1 my-1 px-1"
-              >
-                <div className="flex flex-row justify-between w-full items-center ">
-                  <span>Cash Purchase</span>
-                  <CheckIcon className="invisible size-5 fill-logo-blue-500 group-data-selected:visible" />
-                </div>
-              </ListboxOption>
-              <ListboxOption
-                value="Refinance"
-                className="cursor-pointer data-focus:bg-neutral-300  group flex gap-2 rounded-md mx-1 my-1 px-1"
-              >
-                <div className="flex flex-row justify-between w-full items-center ">
-                  <span>Refinance</span>
-                  <CheckIcon className="invisible size-5 fill-logo-blue-500 group-data-selected:visible" />
-                </div>
-              </ListboxOption>
+              <Option type={"Purchase with Financing"} />
+              <Option type={"Cash Purchase"} />
+              <Option type={"Refinance"} />
             </ListboxOptions>
           </div>
         </Listbox>

@@ -81,7 +81,7 @@ function findIntangibleTax(loanAmount) {
 function lenderPurchase(salesPrice, loanAmount) {
   titleCharges = {
     name: "Settlement Fees",
-    "Attorney's Fee": 650,
+    "Attorney's Fee": 675,
     "Lender's Title Insurance": 200,
     "Owner's Title Insurance": findTitleInsuranceCost(
       salesPrice,
@@ -89,7 +89,7 @@ function lenderPurchase(salesPrice, loanAmount) {
       5.55,
       4.5
     ),
-    "Examination Fee": 200,
+    "Examination Fee": 225,
     "Commitment Fee": 200,
     "Closing Protection Letter": 50,
     "Post-Closing Fee": 45,
@@ -109,7 +109,7 @@ function lenderPurchase(salesPrice, loanAmount) {
 function cashPurcahse(salesPrice) {
   titleCharges = {
     name: "Settlement Fees",
-    "Attorney's Fee": 475,
+    "Attorney's Fee": 500,
     // "Lender's Title Insurance" : null,
     "Owner's Title Insurance": findTitleInsuranceCost(
       salesPrice,
@@ -117,7 +117,7 @@ function cashPurcahse(salesPrice) {
       5.55,
       4.5
     ),
-    "Examination Fee": 200,
+    "Examination Fee": 225,
     "Commitment Fee": 200,
     // "Closing Protection Letter" : null,
     "Post-Closing Fee": 45,
@@ -137,7 +137,7 @@ function cashPurcahse(salesPrice) {
 function refinance(loanAmount) {
   titleCharges = {
     name: "Settlement Fees",
-    "Attorney's Fee": 450,
+    "Attorney's Fee": 475,
     "Lender's Title Insurance": findTitleInsuranceCost(
       loanAmount,
       4,
@@ -145,7 +145,7 @@ function refinance(loanAmount) {
       2.95
     ),
     // "Owner's Title Insurance" : null,
-    "Examination Fee": 200,
+    "Examination Fee": 225,
     "Commitment Fee": 125,
     "Closing Protection Letter": 50,
     "Post-Closing Fee": 45,

@@ -104,7 +104,7 @@ export let styles = StyleSheet.create({
     backgroundColor: "#cae0ea",
   },
   greenBG: {
-    backgroundColor: "#a8ccc4",
+    backgroundColor: "#b9d5d0",
   },
   greyBG: {
     backgroundColor: "#cccccc",

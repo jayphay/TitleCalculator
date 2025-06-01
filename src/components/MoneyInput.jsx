@@ -9,6 +9,7 @@ export default function MoneyInput({ name, price, setPrice }) {
         {name}
       </label>
       <NumericFormat
+        inputMode="numeric"
         value={price}
         decimalScale={2}
         fixedDecimalScale
