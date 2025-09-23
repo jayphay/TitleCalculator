@@ -13,7 +13,7 @@ export default function Inputs() {
             <div className="flex flex-col justify-evenly size-[90%] sm:pl-5">
               <div className="flex flex-row w-full">
                 <h1 className="font-bold text-[36px] md:text-[40px] text-logo-blue-500">
-                  Closing Cost Calculator
+                  Closing Costs Calculator
                 </h1>
               </div>
               <Name />
