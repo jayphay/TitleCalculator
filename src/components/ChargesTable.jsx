@@ -65,7 +65,7 @@ export default function ChargesTable({ charges }) {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             }).format(total)}`}
-            sellerAmt={charges.name === "Title Charges" ? "$90" : "$0"}
+            sellerAmt={charges.name === "Settlement Fees" ? "$90" : "$0"}
             regularCharge={false}
           />
         </tfoot>

@@ -122,7 +122,7 @@ function cashPurcahse(salesPrice) {
     // "Closing Protection Letter" : null,
     "Post-Closing Fee": 45,
     "Payoff Special Handling Fee": 0,
-    "E-Recording Fee (Per Document)": 9.5,
+    "E-Recording Fee (Per Document)": 4.75,
   };
 
   recordingCharges = {
