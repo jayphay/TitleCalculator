@@ -6,7 +6,7 @@ import { UserProvider } from "../context/UserContext";
 
 export default function Inputs() {
   return (
-    <div className="flex items-start justify-center min-h-screen px-30 sm:px-0">
+    <div className="flex items-start justify-center min-h-screen pt-0 sm:pt-30">
       <UserProvider>
         <div className="flex items-center justify-center bg-[#f9f9f9] rounded-md shadow-lg h-[70vh] sm:h-auto sm:aspect-square w-full max-w-none sm:max-w-[70vmin] m-2 ">
           <div className="flex flex-col shadow-md items-center sm:items-start justify-center bg-neutral-200 rounded-md p-5 size-[90%]">
