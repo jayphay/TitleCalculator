@@ -37,7 +37,7 @@ export default function LineItems() {
       <UserProvider>
         <div className="flex items-center justify-center bg-[#f9f9f9] rounded-md shadow-lg h-auto w-full max-w-none sm:max-w-[90vmin] smd:max-w-[80vmin] m-2">
           <div className="flex flex-col shadow-md items-center smd:items-start justify-center bg-neutral-200 rounded-md p-1 smd:p-3 size:[100%] smd:size-[90%] smd:my-7">
-            <div className="flex flex-col justify-evenly size-[98%] smd:size-[90%] smd:pl-5">
+            <div className="flex flex-col justify-center size-[98%] smd:size-[90%] smd:pl-12">
               <QuoteInfo />
               <ListItems />
               <div className="flex flex-row justify-start align-center gap-3 pt-3 pb-1.5 smd:pb-0">
