@@ -33,7 +33,7 @@ export default function LineItems() {
   };
 
   return (
-    <div className="flex items-start justify-center min-h-screen px-0 sm:px-4">
+    <div className="flex items-start justify-center min-h-screen px-30 sm:px-0">
       <UserProvider>
         <div className="flex items-center justify-center bg-[#f9f9f9] rounded-md shadow-lg h-auto w-full max-w-none sm:max-w-[90vmin] smd:max-w-[80vmin] m-2">
           <div className="flex flex-col shadow-md items-center smd:items-start justify-center bg-neutral-200 rounded-md p-1 smd:p-3 size:[100%] smd:size-[90%] smd:my-7">
