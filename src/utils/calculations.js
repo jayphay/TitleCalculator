@@ -24,7 +24,7 @@ let recordingCharges = {
   "Intangible Tax": null,
 };
 
-const sellerCharges = {
+let sellerCharges = {
   "Post-Closing Fee": 45,
   "Payoff Special Handling Fee": 45,
 };
@@ -72,12 +72,11 @@ function findIntangibleTax(loanAmount) {
   ); // takes the lesser of loan/500 * $1.50 and $25k (max amount of transfer tax)
 }
 
-/* 
+/**
     The rates in findTitleInsurance will need to be updated whenever the rates are changed.
     Rates for lender and cash purchase are the owner's policy enhanced rates
     Rates for refinance are the loan policy regular rates
 */
-
 function lenderPurchase(salesPrice, loanAmount) {
   titleCharges = {
     name: "Settlement Fees",
@@ -95,6 +94,7 @@ function lenderPurchase(salesPrice, loanAmount) {
     "Post-Closing Fee": 45,
     "Payoff Special Handling Fee": 0,
     "E-Recording Fee (Per Document)": 9.5,
+    "Technology Fee": 25,
   };
 
   recordingCharges = {
@@ -104,6 +104,8 @@ function lenderPurchase(salesPrice, loanAmount) {
     "Intangible Tax": findIntangibleTax(loanAmount),
     "Transfer Tax": findTransferTax(salesPrice),
   };
+  sellerCharges = {...sellerCharges, "Technology Fee": 25}
+
 }
 
 function cashPurcahse(salesPrice) {
@@ -123,6 +125,7 @@ function cashPurcahse(salesPrice) {
     "Post-Closing Fee": 45,
     "Payoff Special Handling Fee": 0,
     "E-Recording Fee (Per Document)": 4.75,
+    "Technology Fee": 25,
   };
 
   recordingCharges = {
@@ -132,6 +135,8 @@ function cashPurcahse(salesPrice) {
     "Transfer Tax": findTransferTax(salesPrice),
     // "Intangible Tax" : null
   };
+
+  sellerCharges = {...sellerCharges, "Technology Fee": 25}
 }
 
 function refinance(loanAmount) {
@@ -151,6 +156,7 @@ function refinance(loanAmount) {
     "Post-Closing Fee": 45,
     // "Payoff Special Handling Fee" : null,
     "E-Recording Fee (Per Document)": 4.75,
+    "Technology Fee": 50,
   };
 
   recordingCharges = {

@@ -22,7 +22,7 @@ export default function ListItems() {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             }).format(total)}`}
-            sellerAmt={transactionType !== "Refinance" ? "$90" : ""}
+            sellerAmt={transactionType !== "Refinance" ? "$115" : ""}
             regularCharge={false}
           />
         </thead>
