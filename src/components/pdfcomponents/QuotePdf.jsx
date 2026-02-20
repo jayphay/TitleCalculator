@@ -12,6 +12,7 @@ import Refi from './Refi';
 import NewHome from './NewHome';
 import Note from './Note';
 import Disclaimer from './Disclaimer';
+import FinCenNote from './FinCenNote';
 
 
 export default function QuotePdf({name, transactionType, salePrice, loanAmount, titleCharges, recordingCharges, sellerCharges, total}) {
@@ -49,6 +50,9 @@ export default function QuotePdf({name, transactionType, salePrice, loanAmount, 
                 </View>
                 <View style={styles.extraSpace}>
                     <Note />
+                    {/* {console.log("transactionType:", transactionType)} */}
+                    {transactionType != "Refinance" ? <FinCenNote /> : ""}
+                    {/* <FinCenNote /> */}
                     <Disclaimer />
                 </View>
 

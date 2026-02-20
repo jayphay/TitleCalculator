@@ -15,6 +15,7 @@ import Note from "../components/Note.jsx";
 import Disclaimer from "../components/Disclaimer.jsx";
 import ResetButton from "../components/ResetButton.jsx";
 import ThankYou from "../components/ThankYou.jsx";
+import FinCenNote from "../components/FinCenNote.jsx";
 
 export default function LineItems() {
   const navigate = useNavigate();
@@ -76,7 +77,7 @@ export default function LineItems() {
               </div>
               <ThankYou />
               <Note />
-
+              {transactionType != "Refinance" && <FinCenNote />}
               <Disclaimer />
             </div>
           </div>
