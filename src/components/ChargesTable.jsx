@@ -29,7 +29,7 @@ export default function ChargesTable({ charges }) {
           charges.name == "Settlement Fees" ? "rounded-t-md" : ""
         }`}
       >
-        <thead className={"font-bold bg-sp-green-500 "}>
+        <thead className={"font-bold bg-tertiary-blue-200 "}>
           <ChargesTableEntries
             chargeName={charges.name}
             buyerAmt={
@@ -58,7 +58,7 @@ export default function ChargesTable({ charges }) {
             )}
         </tbody>
 
-        <tfoot className="font-semibold bg-sp-lb-500">
+        <tfoot className="font-semibold bg-secondary-green-500/25">
           <ChargesTableEntries
             chargeName={`Subtotal`}
             buyerAmt={`$${new Intl.NumberFormat("en-US", {

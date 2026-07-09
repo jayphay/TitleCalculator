@@ -15,7 +15,7 @@ export default function ListItems() {
 
       <ChargesTable charges={recordingCharges} />
       <table className="overflow-hidden rounded-b-md">
-        <thead className="font-bold bg-sp-green-500">
+        <thead className="font-bold bg-tertiary-alt-blue-400">
           <ChargesTableEntries
             chargeName="Total"
             buyerAmt={`$${new Intl.NumberFormat("en-US", {

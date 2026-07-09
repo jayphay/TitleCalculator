@@ -9,7 +9,7 @@ export default function Option({ type }) {
     >
       <div className="flex flex-row justify-between w-full items-center ">
         <span>{type}</span>
-        <CheckIcon className="invisible size-5 fill-logo-blue-500 group-data-selected:visible " />
+        <CheckIcon className="invisible size-5 fill-primary-green-500 group-data-selected:visible " />
       </div>
     </ListboxOption>
   );
