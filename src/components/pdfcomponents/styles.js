@@ -105,7 +105,7 @@ export let styles = StyleSheet.create({
     backgroundColor: "#c3d2ef",
   },
   greyBG: { // row background
-    backgroundColor: "#1b3a2f54",
+    backgroundColor: "#1b3a2f33",
   },
   tableStyles: {
     borderColor: "rgba(0,0,0,0)",
