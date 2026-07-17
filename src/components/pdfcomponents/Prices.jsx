@@ -8,7 +8,7 @@ export default function Prices({ transactionType, salePrice, loanAmount }) {
     return (
         <View style={styles.subSection}>
             <Text style={[styles.subHeadText, styles.bold]}>
-                {transactionType == "Purchase with Financing" ? `Sale Price: $${salePrice} | Loan Amount: $${loanAmount}` : transactionType == "Cash Purchase" ? 
+                {transactionType == "Purchase with Financing" ? `Sales Price: $${salePrice} | Loan Amount: $${loanAmount}` : transactionType == "Cash Purchase" ? 
                 `Sale Price: $${salePrice}` : `Loan Amount: $${loanAmount}`}
             </Text>
         </View>
