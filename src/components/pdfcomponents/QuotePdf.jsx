@@ -37,7 +37,7 @@ export default function QuotePdf({name, transactionType, salePrice, loanAmount, 
                         <TableEntries 
                             chargeName="Total"
                             buyerAmt={`$${new Intl.NumberFormat('en-US', {minimumFractionDigits: 2,maximumFractionDigits: 2}).format(total)}`}
-                            sellerAmt={transactionType !== "Refinance" ? "$90" : ""}
+                            sellerAmt={transactionType !== "Refinance" ? "$115" : ""}
                             transactionType={transactionType}
                             />
                     </Table>

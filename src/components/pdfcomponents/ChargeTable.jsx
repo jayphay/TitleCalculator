@@ -34,7 +34,7 @@ export default function ChargeTable({charges, transactionType, sellerCharges}) {
             <TableEntries 
                 chargeName={`Subtotal`}
                 buyerAmt={`$${new Intl.NumberFormat('en-US', {minimumFractionDigits: 2,maximumFractionDigits: 2}).format(total)}`}
-                sellerAmt={charges.name === "Settlement Fees" ? "$90" : "$0"} 
+                sellerAmt={charges.name === "Settlement Fees" ? "$115" : "$0"} 
                 transactionType={transactionType}
                 doTab={true}
                 />
