@@ -13,9 +13,10 @@ import NewHome from './NewHome';
 import Note from './Note';
 import Disclaimer from './Disclaimer';
 import FinCenNote from './FinCenNote';
+import ALDisclaimer from './ALDisclaimer';
 
 
-export default function QuotePdf({name, transactionType, salePrice, loanAmount, titleCharges, recordingCharges, sellerCharges, total}) {
+export default function QuotePdf({name, transactionType, salePrice, loanAmount, titleCharges, recordingCharges, sellerCharges, total, state}) {
 
     const QuotePdf = () => (
     <Document style={styles.document}>
@@ -24,7 +25,7 @@ export default function QuotePdf({name, transactionType, salePrice, loanAmount, 
                 <Header />
                 <View style={styles.subHeader}>
                     {/* <View style={styles.shadow}/> */}
-                    <NameLabel name={name} />
+                    <NameLabel name={name} state={state} transactionType={transactionType}/>
                     <Prices transactionType={transactionType} salePrice={salePrice} loanAmount={loanAmount}/>
                     <DateLabel />
                 </View>
@@ -36,7 +37,7 @@ export default function QuotePdf({name, transactionType, salePrice, loanAmount, 
                         <TableEntries 
                             chargeName="Total"
                             buyerAmt={`$${new Intl.NumberFormat('en-US', {minimumFractionDigits: 2,maximumFractionDigits: 2}).format(total)}`}
-                            sellerAmt={transactionType !== "Refinance" ? "$90" : ""}
+                            sellerAmt={transactionType !== "Refinance" ? "$115" : ""}
                             transactionType={transactionType}
                             />
                     </Table>
@@ -51,9 +52,10 @@ export default function QuotePdf({name, transactionType, salePrice, loanAmount, 
                 <View style={styles.extraSpace}>
                     <Note />
                     {/* {console.log("transactionType:", transactionType)} */}
-                    {transactionType != "Refinance" ? <FinCenNote /> : ""}
+                    {/* {transactionType != "Refinance" ? <FinCenNote /> : ""} */}
                     {/* <FinCenNote /> */}
                     <Disclaimer />
+                    {state == "Alabama" ? <ALDisclaimer /> : ""}
                 </View>
 
             </View>

@@ -1,17 +1,17 @@
-import { useContext } from "react";
-import { UserContext } from "../context/UserContext";
 import ChargesTable from "./ChargesTable";
 import { useStore } from "../store/store.js";
 import ChargesTableEntries from "./ChargesTableEntries.jsx";
 
 export default function ListItems() {
-  const { titleCharges, recordingCharges } = useContext(UserContext);
+  const titleCharges = useStore((state) => state.titleCharges);
+  const recordingCharges = useStore((state) => state.recordingCharges);
   const total = useStore((state) => state.total);
   const transactionType = useStore((state) => state.transactionType);
 
   return (
     <div className="flex flex-col justify-center align-center ">
-      <ChargesTable charges={titleCharges} />
+    {/* creates table for title charges */}
+      <ChargesTable charges={titleCharges} /> 
 
       <ChargesTable charges={recordingCharges} />
       <table className="overflow-hidden rounded-b-md">

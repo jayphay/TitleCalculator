@@ -3,26 +3,26 @@
     functions that are called for each of the different transactions.
     Some values may remain null and only non-null values will be printed
 */
-let titleCharges = {
-  name: "Settlement Fees",
-  "Attorney's Fee": null,
-  "Lender's Title Insurance": null,
-  "Owner's Title Insurance": null,
-  "Examination Fee": null,
-  "Commitment Fee": null,
-  "Closing Protection Letter": null,
-  "Post-Closing Fee": null,
-  "Payoff Special Handling Fee": null,
-  "E-Recording Fee (Per Document)": null,
-};
+// let titleCharges = {
+//   name: "Settlement Fees",
+//   "Attorney's Fee": null,
+//   "Lender's Title Insurance": null,
+//   "Owner's Title Insurance": null,
+//   "Examination Fee": null,
+//   "Commitment Fee": null,
+//   "Closing Protection Letter": null,
+//   "Post-Closing Fee": null,
+//   "Payoff Special Handling Fee": null,
+//   "E-Recording Fee (Per Document)": null,
+// };
 
-let recordingCharges = {
-  name: "Government Fees",
-  "Deed Recording Fee": null,
-  "Mortgage Recording Fee": null,
-  "Transfer Tax": null,
-  "Intangible Tax": null,
-};
+// let recordingCharges = {
+//   name: "Government Fees",
+//   "Deed Recording Fee": null,
+//   "Mortgage Recording Fee": null,
+//   "Transfer Tax": null,
+//   "Intangible Tax": null,
+// };
 
 let sellerCharges = {
   "Post-Closing Fee": 45,
@@ -38,7 +38,7 @@ function findTitleInsuranceCost(
 ) {
   const first100Insurance = Math.max(
     salesPrice < 100000
-      ? (salesPrice / 1000) * first100Rate
+      ? Math.ceil(salesPrice / 1000) * first100Rate
       : 100 * first100Rate,
     200
   ); // check if loan less than 100k
@@ -56,19 +56,18 @@ function findTitleInsuranceCost(
   }
 
   return (
-    Math.round(
-      (first100Insurance + second400Insurance + restOfLoanInsurance) * 100
-    ) / 100
+    Number
+      (first100Insurance + second400Insurance + restOfLoanInsurance).toFixed(2)
   );
 }
 
 function findTransferTax(salesPrice) {
-  return Math.ceil((salesPrice / 1000) * 10) / 10;
+  return Number(salesPrice / 1000).toFixed(2)
 }
 
 function findIntangibleTax(loanAmount) {
   return (
-    Math.round(Math.min(Math.ceil(loanAmount / 500) * 1.5, 25000) * 100) / 100
+    Number(Math.min(Math.ceil(loanAmount / 500) * 1.5, 25000)).toFixed(2)
   ); // takes the lesser of loan/500 * $1.50 and $25k (max amount of transfer tax)
 }
 
@@ -78,16 +77,16 @@ function findIntangibleTax(loanAmount) {
     Rates for refinance are the loan policy regular rates
 */
 function lenderPurchase(salesPrice, loanAmount) {
-  titleCharges = {
+  const titleCharges = {
     name: "Settlement Fees",
     "Attorney's Fee": 675,
     "Lender's Title Insurance": 200,
-    "Owner's Title Insurance": findTitleInsuranceCost(
+    "Owner's Title Insurance": Number(findTitleInsuranceCost(
       salesPrice,
       6.6,
       5.55,
       4.5
-    ),
+    )),
     "Examination Fee": 225,
     "Commitment Fee": 200,
     "Closing Protection Letter": 50,
@@ -97,28 +96,31 @@ function lenderPurchase(salesPrice, loanAmount) {
     "Technology Fee": 25,
   };
 
-  recordingCharges = {
+  const recordingCharges = {
     name: "Government Fees",
     "Deed Recording Fee": 25,
     "Mortgage Recording Fee": 25,
-    "Intangible Tax": findIntangibleTax(loanAmount),
-    "Transfer Tax": findTransferTax(salesPrice),
+    "Intangible Tax": Number(findIntangibleTax(loanAmount)),
+    "Transfer Tax": Number(findTransferTax(salesPrice)),
   };
   sellerCharges = {...sellerCharges, "Technology Fee": 25}
+
+  return { titleCharges, recordingCharges, sellerCharges };
+
 
 }
 
 function cashPurcahse(salesPrice) {
-  titleCharges = {
+  const titleCharges = {
     name: "Settlement Fees",
     "Attorney's Fee": 500,
     // "Lender's Title Insurance" : null,
-    "Owner's Title Insurance": findTitleInsuranceCost(
+    "Owner's Title Insurance": Number(findTitleInsuranceCost(
       salesPrice,
       6.6,
       5.55,
       4.5
-    ),
+    )),
     "Examination Fee": 225,
     "Commitment Fee": 200,
     // "Closing Protection Letter" : null,
@@ -128,27 +130,30 @@ function cashPurcahse(salesPrice) {
     "Technology Fee": 25,
   };
 
-  recordingCharges = {
+  const recordingCharges = {
     name: "Government Fees",
     "Deed Recording Fee": 25,
     // "Mortgage Recording Fee" : null,
-    "Transfer Tax": findTransferTax(salesPrice),
+    "Transfer Tax": Number(findTransferTax(salesPrice)),
     // "Intangible Tax" : null
   };
 
   sellerCharges = {...sellerCharges, "Technology Fee": 25}
+
+  return { titleCharges, recordingCharges, sellerCharges };
+
 }
 
 function refinance(loanAmount) {
-  titleCharges = {
+  const titleCharges = {
     name: "Settlement Fees",
     "Attorney's Fee": 475,
-    "Lender's Title Insurance": findTitleInsuranceCost(
+    "Lender's Title Insurance": Number(findTitleInsuranceCost(
       loanAmount,
       4,
       3.3,
       2.95
-    ),
+    )),
     // "Owner's Title Insurance" : null,
     "Examination Fee": 225,
     "Commitment Fee": 125,
@@ -159,19 +164,24 @@ function refinance(loanAmount) {
     "Technology Fee": 50,
   };
 
-  recordingCharges = {
+  const recordingCharges = {
     name: "Government Fees",
     // "Deed Recording Fee" : null,
     "Mortgage Recording Fee": 25,
     // "Transfer Tax" : null,
-    "Intangible Tax": findIntangibleTax(loanAmount),
+    "Intangible Tax": Number(findIntangibleTax(loanAmount)),
   };
+
+  sellerCharges = {
+    "Post-Closing Fee": null,
+    "Payoff Special Handling Fee": null,
+  };
+
+  return { titleCharges, recordingCharges, sellerCharges};
+
 }
 
 export {
-  titleCharges,
-  recordingCharges,
-  sellerCharges,
   lenderPurchase,
   cashPurcahse,
   refinance,

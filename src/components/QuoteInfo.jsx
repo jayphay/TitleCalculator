@@ -5,10 +5,13 @@ export default function QuoteInfo() {
   const salesPrice = useStore((state) => state.salesPrice);
   const loanAmount = useStore((state) => state.loanAmount);
   const transactionType = useStore((state) => state.transactionType);
+  const state = useStore((state) => state.state);
 
   return (
     <div className="flex flex-col font-bold">
       <h1 className="text-[32px]">Quote for: {name}</h1>
+      <h2 className="text-[24px">State: {state}</h2>
+      <h2 className="text-[24px">{transactionType}</h2>
       <div className="flex flex-row gap-2 py-3">
         {transactionType == "Purchase with Financing" ||
         transactionType == "Cash Purchase" ? (
