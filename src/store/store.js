@@ -18,16 +18,28 @@ export const useStore = create((set) => ({
   salesPrice: "",
   loanAmount: "",
   name: "",
+  state: "Georgia",
+  titleCharges: null,
+  recordingCharges: null,
+  sellerCharges: null,
 
   setName: (type) => set({ name: type }),
   setTransactionType: (type) => set({ transactionType: type }),
   setSaleAmount: (amount) => set({ salesPrice: amount }),
   setLoanAmt: (amount) => set({ loanAmount: amount }),
+  setState: (state) => set({ state: state }),
+  setTitleCharges: (charges) => set({ titleCharges: charges }),
+  setRecordingCharges: (charges) => set({ recordingCharges: charges }),
+  setSellerCharges: (charges) => set({ sellerCharges: charges }),
   resetAll: () =>
     set({
       name: "",
       salesPrice: "",
       loanAmount: "",
       transactionType: "Purchase with Financing",
+      state: "Georgia",
+      titleCharges: null,
+      recordingCharges: null,
+      sellerCharges: null,
     }),
 }));

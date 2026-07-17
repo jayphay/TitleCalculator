@@ -71,7 +71,7 @@ export let styles = StyleSheet.create({
   subHeader: {
     flexDirection: "column",
     alignItems: "flex-start",
-    height: 100,
+    height: 135,
     backgroundColor: "#ececec",
     borderRadius: 10,
     marginBottom: 10,
@@ -90,6 +90,11 @@ export let styles = StyleSheet.create({
   },
   subSection: {
     padding: 5,
+  },
+  nameLabelSpacing : {
+    padding: 5,
+    flexDirection: "column",
+    alignItems: "flex-start",
   },
   // shadow: {
   //   backgroundColor: '#cccccc',

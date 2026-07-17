@@ -1,13 +1,13 @@
-import { useContext, useEffect } from "react";
-import { UserContext } from "../context/UserContext";
+import { useEffect } from "react";
 import { useStore } from "../store/store.js";
 import ChargesTableEntries from "./ChargesTableEntries.jsx";
 
 export default function ChargesTable({ charges }) {
-  const { sellerCharges } = useContext(UserContext);
+  const sellerCharges = useStore((state) => state.sellerCharges);
   const transactionType = useStore((state) => state.transactionType);
   // console.log(transactionType);
 
+  // adds up all the charges amounts
   let total = Object.entries(charges).reduce((sum, [charge, amount]) => {
     if (charge !== "name" && typeof amount === "number") {
       return sum + amount;
@@ -29,6 +29,7 @@ export default function ChargesTable({ charges }) {
           charges.name == "Settlement Fees" ? "rounded-t-md" : ""
         }`}
       >
+      {/* creates column header entries */}
         <thead className={"font-bold bg-sp-green-500 "}>
           <ChargesTableEntries
             chargeName={charges.name}
@@ -56,7 +57,7 @@ export default function ChargesTable({ charges }) {
                   />
                 )
             )}
-        </tbody>
+          </tbody> 
 
         <tfoot className="font-semibold bg-sp-lb-500">
           <ChargesTableEntries
