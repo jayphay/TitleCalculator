@@ -6,9 +6,9 @@ export default function ALDisclaimer() {
     return (
         <View style={styles.questions}>
             <Text>
-                <Text style={styles.smallText}>*Estimated amount only. Alabama recording fees vary by county, 
-                transaction type, and number of pages, among other factors. 
-                Final recording charges are confirmed after review of the county requirements and recording documents.</Text>
+                <Text style={styles.smallText}>*Estimated amount only. Recording fees vary by county, 
+                and by number of pages and cross-references in each document recorded. 
+                We'll confirm the final recording fees once we review your specific transaction.</Text>
             </Text>
         </View>
     )
