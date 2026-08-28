@@ -10,3 +10,4 @@ export default function NameLabel({name, state, transactionType}) {
         </View>
     )
 }
+

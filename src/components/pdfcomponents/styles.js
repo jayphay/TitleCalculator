@@ -35,21 +35,22 @@ export let styles = StyleSheet.create({
     paddingBottom: 0,
   },
   logo: {
-    width: "40px",
+    width: "400px",
     height: "80px",
   },
   header: {
     display: "flex",
     flexDirection: "row",
-    alignItems: "stretch",
+    alignItems: "center",
     width: "100%",
     height: "100px",
   },
   logoName: {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "column-reverse",
     height: "100%",
     marginLeft: 5,
+    marginBottom: 18,
   },
   logoLetters: {
     color: "#1b3a2f",
