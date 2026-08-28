@@ -17,7 +17,7 @@ export default function Name() {
         onChange={(e) => setName(e.target.value)}
         className="outline-none border-b-1 border-sp-lg-500 focus:border-transparent "
       />
-      <span className="absolute left-1/2 bottom-0 w-0 h-[2px] bg-logo-blue-500 transition-all duration-150 group-focus-within:left-0 group-focus-within:w-full"></span>
+      <span className="absolute left-1/2 bottom-0 w-0 h-[2px] bg-primary-green-500 transition-all duration-150 group-focus-within:left-0 group-focus-within:w-full"></span>
     </div>
   );
 }

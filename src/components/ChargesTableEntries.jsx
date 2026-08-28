@@ -19,7 +19,7 @@ export default function ChargesTableEntries({
           chargeName != "Government Fees" ||
           chargeName != "Total") &&
         id % 2 == 0
-          ? "bg-sp-lg-500"
+          ? "bg-primary-green-500/20"
           : ""
       } `}
     >

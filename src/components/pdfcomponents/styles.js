@@ -30,15 +30,13 @@ export let styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     flexWrap: "wrap",
-    // justifyContent: "space-evenly",
-    // alignItems: "center",
+
     padding: 40,
     paddingBottom: 0,
   },
   logo: {
     width: "40px",
     height: "80px",
-    // objectFit: "cover",
   },
   header: {
     display: "flex",
@@ -46,17 +44,15 @@ export let styles = StyleSheet.create({
     alignItems: "stretch",
     width: "100%",
     height: "100px",
-    // margin: "40 20 20 20"
   },
   logoName: {
     display: "flex",
     flexDirection: "column",
-    // flex: 1,
     height: "100%",
     marginLeft: 5,
   },
   logoLetters: {
-    color: "#0076bd",
+    color: "#1b3a2f",
     fontSize: 22,
   },
   bold: {
@@ -105,14 +101,16 @@ export let styles = StyleSheet.create({
   //   height: "105%",
   //   zIndex: 0,
   // },
-  blueBG: {
-    backgroundColor: "#cae0ea",
+  blueBG: { // subtotal background
+    // backgroundColor: "#cae0ea",
+    backgroundColor: "#1b706240",
   },
-  greenBG: {
-    backgroundColor: "#b9d5d0",
+  greenBG: { // government fees
+    // backgroundColor: "#b9d5d0",
+    backgroundColor: "#c3d2ef",
   },
-  greyBG: {
-    backgroundColor: "#cccccc",
+  greyBG: { // row background
+    backgroundColor: "#1b3a2f33",
   },
   tableStyles: {
     borderColor: "rgba(0,0,0,0)",
@@ -150,14 +148,16 @@ export let styles = StyleSheet.create({
     borderLeftWidth: 0,
     borderColor: "rgba(0,0,0,0)",
     borderTopLeftRadius: 10,
-    backgroundColor: "#a8ccc4",
+    // backgroundColor: "#a8ccc4",
+    backgroundColor: "#c3d2ef",
   },
   topRight: {
     borderColor: "rgba(0,0,0,0)",
     borderRightWidth: 0,
     borderTopWidth: 0,
     borderTopRightRadius: 10,
-    backgroundColor: "#a8ccc4",
+    // backgroundColor: "#a8ccc4",
+    backgroundColor: "#c3d2ef",
   },
   bottomLeft: {
     paddingRight: 8,
@@ -166,14 +166,16 @@ export let styles = StyleSheet.create({
     borderBottomWidth: 0,
     borderLeftWidth: 0,
     borderBottomLeftRadius: 10,
-    backgroundColor: "#a8ccc4",
+    // backgroundColor: "#a8ccc4",
+    backgroundColor: "#7798d4",
   },
   bottomRight: {
     borderColor: "rgba(0,0,0,0)",
     borderBottomWidth: 0,
     borderRightWidth: 0,
     borderBottomRightRadius: 10,
-    backgroundColor: "#a8ccc4",
+    // backgroundColor: "#a8ccc4",
+    backgroundColor: "#7798d4",
   },
   questions: {
     display: "flex",
@@ -193,19 +195,13 @@ export let styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "flex-start",
     height: "200px",
-    // backgroundColor: "#ececec",
-    // borderRadius: 10,
+
     marginTop: 10,
   },
 
   extraSpace: {
-    // flexDirection: "column",
-    // flexWrap: "wrap",
-    // alignItems: "flex-end",
-    // height: "100%",
     position: "absolute",
     bottom: 30,
-    // width: "100%",
     left: 50,
     right: 50,
   },

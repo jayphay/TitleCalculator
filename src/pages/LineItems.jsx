@@ -36,15 +36,15 @@ export default function LineItems() {
   return (
     <div className="flex items-start justify-center min-h-screen pt-5">
       <UserProvider>
-        <div className="flex items-center justify-center bg-[#f9f9f9] rounded-md shadow-lg h-auto w-full max-w-none sm:max-w-[90vmin] smd:max-w-[80vmin] m-2">
-          <div className="flex flex-col shadow-md items-center smd:items-start justify-start bg-neutral-200 rounded-md p-1 smd:p-3 size:[100%] smd:size-[90%] smd:my-7 max-h-[90vh] overflow-y-auto overflow-x-hidden">
+        <div className="flex items-center justify-center bg-primary-green-500 rounded-md shadow-lg h-auto w-full max-w-none sm:max-w-[90vmin] smd:max-w-[80vmin] m-2">
+          <div className="flex flex-col shadow-md items-center smd:items-start justify-center bg-[#f9f9f9] rounded-md p-1 smd:p-3 size:[100%] smd:size-[90%] smd:my-7">
             <div className="flex flex-col justify-center size-[98%] smd:size-[90%] smd:pl-12">
               <QuoteInfo />
               <ListItems />
               <div className="flex flex-row flex-wrap justify-start align-center gap-3 pt-3 pb-1.5 smd:pb-0">
                 <button
                   onClick={handleClick}
-                  className="rounded-xl bg-sp-lb-600 cursor-pointer disabled:cursor-not-allowed shadow-md p-3 font-semibold disabled:opacity-50 hover:bg-sp-lb-900 active:translate-y-1"
+                  className="rounded-xl bg-cta-yellow-500 cursor-pointer disabled:cursor-not-allowed shadow-md p-3 font-semibold disabled:opacity-50 hover:bg-cta-alt-yellow-500 active:translate-y-1"
                 >
                   Edit
                 </button>
@@ -67,7 +67,7 @@ export default function LineItems() {
                   {({ blob, url, loading, error }) => (
                     <button
                       disabled={loading}
-                      className="rounded-xl bg-sp-lb-600 cursor-pointer disabled:cursor-not-allowed shadow-md p-3 font-semibold disabled:opacity-50 hover:bg-sp-lb-900 active:translate-y-1"
+                      className="rounded-xl bg-cta-yellow-500 cursor-pointer disabled:cursor-not-allowed shadow-md p-3 font-semibold disabled:opacity-50 hover:bg-cta-alt-yellow-500 active:translate-y-1"
                     >
                       {loading ? "Loading document..." : "Download PDF"}
                     </button>
