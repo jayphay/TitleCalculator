@@ -14,6 +14,7 @@ import Note from './Note';
 import Disclaimer from './Disclaimer';
 import FinCenNote from './FinCenNote';
 import ALDisclaimer from './ALDisclaimer';
+import LenderDisclaimer from './LenderDisclaimer';
 
 
 export default function QuotePdf({name, transactionType, salePrice, loanAmount, titleCharges, recordingCharges, sellerCharges, total, state}) {
@@ -53,6 +54,7 @@ export default function QuotePdf({name, transactionType, salePrice, loanAmount, 
                     <Note />
                     {/* {console.log("transactionType:", transactionType)} */}
                     {/* {transactionType != "Refinance" ? <FinCenNote /> : ""} */}
+                    {transactionType != "Cash Purchase" ? <LenderDisclaimer /> : ""}
                     {/* <FinCenNote /> */}
                     <Disclaimer />
                     {state == "Alabama" ? <ALDisclaimer /> : ""}

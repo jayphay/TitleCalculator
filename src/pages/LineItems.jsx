@@ -12,6 +12,7 @@ import ResetButton from "../components/ResetButton.jsx";
 import ThankYou from "../components/ThankYou.jsx";
 import FinCenNote from "../components/FinCenNote.jsx";
 import ALDisclaimer from "../components/ALDisclaimer.jsx";
+import LenderDisclaimer from "../components/LenderDisclaimer.jsx";
 
 export default function LineItems() {
   const navigate = useNavigate();
@@ -79,6 +80,7 @@ export default function LineItems() {
               <ThankYou />
               <Note />
               {/* {transactionType != "Refinance" && <FinCenNote />} */}
+              {transactionType != "Cash Purchase" && <LenderDisclaimer />}
               <Disclaimer />
               {state == "Alabama" && <ALDisclaimer /> }
             </div>

@@ -74,7 +74,7 @@ function ALlenderPurchase(salesPrice, loanAmount) {
   const titleCharges = {
     name: "Settlement Fees",
     "Attorney's Fee": 675,
-    "Lender's Title Insurance": 250,
+    "Simultaneous Lender's Title Insurance*": 250,
     "Owner's Title Insurance": Number(findTitleInsuranceCost(
       salesPrice,
       4.38,
@@ -153,7 +153,7 @@ function ALrefinance(loanAmount) {
   const titleCharges = {
     name: "Settlement Fees",
     "Attorney's Fee": 475,
-    "Lender's Title Insurance": Number(findRefianceInsurance(
+    "Simultaneous Lender's Title Insurance*": Number(findRefianceInsurance(
       loanAmount,
       2.5,
       1.75,
